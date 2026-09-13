@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandra Cossins | Fotografía y Diseño</title>
+    <link rel="icon" type="image/png" href="assets/logoNobackground.png">
+    <meta name="description" content="Portfolio profesional de fotografía de eventos, bodas, comuniones y social por Alexandra Cossins.">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="loader">
+        <img src="assets/ac poppy limpio.png" alt="Cargando..." class="loader-logo">
+    </div>
+
+    <header class="navbar">
+        <div class="logo">
+                <img src="assets/logoNobackground.png" alt="Alexandra Cossins Logo">
+            <span>Alexandra Cossins</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about" class="nav-link">Sobre Mí</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content reveal-text">
+                <h1>La belleza de <br> lo <em>efímero</em></h1>
+                <p>Fotografía de Eventos y Social con un toque elegante y natural.</p>
+                <a href="#portfolio" class="btn-primary">Descubre mi Trabajo</a>
+            </div>
+        </section>
+
+        <section id="portfolio" class="categories-section">
+            <div class="section-header reveal-up">
+                <h2>Galerías</h2>
+                <p>Selecciona una categoría para explorar las sesiones fotográficas.</p>
+            </div>
+            
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- Categoría Bodas -->
+                    <div class="category-card" onclick="window.location.href='bodas.html'">
+                        <div class="card-img-wrapper">
+                            <div class="swiper cube-swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/IMG_54391.png');"></div></div>
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/LOGO.jpg');"></div></div>
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/IMG_54391.png');"></div></div>
+                                </div>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Bodas</h3>
+                            <p>El día más especial</p>
+                            <span class="view-btn">Ver Galería <span class="arrow">→</span></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Categoría Comuniones -->
+                    <div class="category-card" onclick="window.location.href='comuniones.html'">
+                        <div class="card-img-wrapper">
+                            <div class="swiper cube-swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/ac\ poppy\ limpio\ \[Recuperado\]-07.png');"></div></div>
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/LOGO.jpg');"></div></div>
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/ac\ poppy\ limpio\ \[Recuperado\]-07.png');"></div></div>
+                                </div>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Comuniones</h3>
+                            <p>Recuerdos para siempre</p>
+                            <span class="view-btn">Ver Galería <span class="arrow">→</span></span>
+                        </div>
+                    </div>
+
+                    <!-- Categoría Parejas -->
+                    <div class="category-card" onclick="window.location.href='parejas.html'">
+                        <div class="card-img-wrapper">
+                            <div class="swiper cube-swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/LOGO.jpg');"></div></div>
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/IMG_54391.png');"></div></div>
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/LOGO.jpg');"></div></div>
+                                </div>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Parejas</h3>
+                            <p>Conexiones auténticas</p>
+                            <span class="view-btn">Ver Galería <span class="arrow">→</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <div class="about-image-wrapper reveal-right">
+                    <img src="assets/IMG_54391.png" alt="Alexandra Cossins trabajando" class="about-img">
+                    <div class="image-accent"></div>
+                </div>
+                <div class="about-text reveal-left">
+                    <h2 class="title-serif">El arte de <em>narrar</em> con imágenes</h2>
+                    <p>Hola, soy Alexandra Cossins. Me apasiona contar historias a través de mi cámara. Cada evento, cada mirada, cada sonrisa es única y mi objetivo es inmortalizar esos instantes con naturalidad, elegancia y un estilo atemporal.</p>
+                    <p>Con años de experiencia en fotografía social, te ofrezco un servicio profesional y cercano, donde tú eres el verdadero protagonista de la historia que estamos a punto de contar.</p>
+                    <img src="assets/ac poppy limpio.png" alt="Firma" class="signature">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content reveal-up">
+            <h2 class="title-serif">Creemos recuerdos <em>eternos</em></h2>
+            <p>¿Tienes un evento en mente? Contáctame y hagamos magia juntos.</p>
+            <a href="mailto:losdesastresdealex@gmail.com" class="btn-primary">Solicitar Presupuesto</a>
+            <div class="social-links">
+                <a href="https://wa.me/34689539849" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+                    <i class="fa-brands fa-square-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/alexandra.cossins/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                    <i class="fa-brands fa-square-instagram"></i>
+                </a>
+                <a href="mailto:losdesastresdealex@gmail.com" class="social-link" aria-label="Email">
+                    <i class="fa-solid fa-square-envelope"></i>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2026 Alexandra Cossins Photography. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

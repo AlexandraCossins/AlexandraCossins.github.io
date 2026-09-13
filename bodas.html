@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Bodas | Alexandra Cossins</title>
+    <link rel="icon" type="image/png" href="assets/logoNobackground.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gallery-header {
+            padding: calc(var(--spacing-xl) + 60px) 5% var(--spacing-lg);
+            text-align: center;
+        }
+        .gallery-grid {
+            column-count: 4;
+            column-gap: 2rem;
+            padding: 0 0 var(--spacing-xl);
+            width: 75%;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        @media (max-width: 1024px) {
+            .gallery-grid {
+                column-count: 2;
+            }
+        }
+        @media (max-width: 768px) {
+            .gallery-grid {
+                column-count: 1;
+            }
+        }
+        
+        .gallery-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 2rem;
+            position: relative;
+            background-color: #fafafa;
+            padding: 15px;
+            padding-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(181, 90, 97, 0.1); /* Sombra muy suave tintada de rosa */
+            transition: transform var(--transition-slow), box-shadow var(--transition-slow), filter var(--transition-slow);
+            break-inside: avoid; /* Previene que se corte la tarjeta entre columnas */
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #ddd;
+        }
+        /* Entrada en cascada independiente del hover */
+        .gallery-item.reveal-up {
+            opacity: 0;
+            translate: 0 50px;
+            animation: revealUpAnim 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: var(--delay, 0s);
+        }
+        @keyframes revealUpAnim {
+            to {
+                opacity: 1;
+                translate: 0 0;
+            }
+        }
+
+        /* Efecto de Foco y Desenfoque */
+        .gallery-grid:has(.gallery-item:hover) .gallery-item:not(:hover) {
+            filter: blur(6px) brightness(0.5);
+            transform: scale(0.95);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.4) translateY(-10px);
+            z-index: 100;
+            box-shadow: 0 15px 40px rgba(181, 90, 97, 0.25);
+        }
+        .polaroid-caption {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #333;
+            margin-top: 15px;
+            font-style: italic;
+        }
+        .polaroid-caption a {
+            color: #111;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .polaroid-caption a:hover {
+            color: #666;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar scrolled">
+        <div class="logo">
+            <a href="index.html" style="display:flex; align-items:center; gap:10px;">
+                <img src="assets/logoNobackground.png" alt="Alexandra Cossins Logo">
+                <span>Alexandra Cossins</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#portfolio" class="nav-link">Volver</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery-header reveal-up active">
+            <h1 class="title-serif">Bodas</h1>
+            <p>El día más especial capturado para siempre.</p>
+        </section>
+
+        <section class="gallery-grid">
+            <div class="gallery-item reveal-up active" style="--delay: 0.0s;">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Boda apaisada">
+                <div class="polaroid-caption"><a href="#">El gran día</a></div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.1s;">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&h=800&q=80" alt="Boda vertical">
+                <div class="polaroid-caption">Ceremonia civil</div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=600&h=600&q=80" alt="Boda cuadrada">
+                <div class="polaroid-caption">Detalles</div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.3s;">
+                <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&h=600&q=80" alt="Boda apaisada 2">
+                <div class="polaroid-caption"><a href="#">Paseo romántico</a></div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.4s;">
+                <img src="https://images.unsplash.com/photo-1543165365-07232ed12fad?auto=format&fit=crop&w=600&h=800&q=80" alt="Boda vertical 2">
+                <div class="polaroid-caption">Preparativos</div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.5s;">
+                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80" alt="Boda anillos">
+                <div class="polaroid-caption">Los anillos</div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.6s;">
+                <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&h=900&q=80" alt="Boda retrato">
+                <div class="polaroid-caption"><a href="#">Retrato</a></div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.7s;">
+                <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80" alt="Boda fiesta">
+                <div class="polaroid-caption">La fiesta</div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.8s;">
+                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&h=600&q=80" alt="Boda banquete">
+                <div class="polaroid-caption">Banquete</div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.9s;">
+                <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=600&h=800&q=80" alt="Boda beso">
+                <div class="polaroid-caption"><a href="#">El beso</a></div>
+            </div>
+        </section>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>

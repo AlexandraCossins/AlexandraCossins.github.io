@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Comuniones | Alexandra Cossins</title>
+    <link rel="icon" type="image/png" href="assets/logoNobackground.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gallery-header {
+            padding: calc(var(--spacing-xl) + 60px) 5% var(--spacing-lg);
+            text-align: center;
+        }
+        .gallery-grid {
+            column-count: 4;
+            column-gap: 2rem;
+            padding: 0 0 var(--spacing-xl);
+            width: 75%;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        @media (max-width: 1024px) {
+            .gallery-grid {
+                column-count: 2;
+            }
+        }
+        @media (max-width: 768px) {
+            .gallery-grid {
+                column-count: 1;
+            }
+        }
+        
+        .gallery-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 2rem;
+            position: relative;
+            background-color: #fafafa;
+            padding: 15px;
+            padding-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(181, 90, 97, 0.1); /* Sombra muy suave tintada de rosa */
+            transition: transform var(--transition-slow), box-shadow var(--transition-slow), filter var(--transition-slow);
+            break-inside: avoid;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #ddd;
+        }
+        /* Entrada en cascada independiente del hover */
+        .gallery-item.reveal-up {
+            opacity: 0;
+            translate: 0 50px;
+            animation: revealUpAnim 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: var(--delay, 0s);
+        }
+        @keyframes revealUpAnim {
+            to {
+                opacity: 1;
+                translate: 0 0;
+            }
+        }
+
+        /* Efecto de Foco y Desenfoque */
+        .gallery-grid:has(.gallery-item:hover) .gallery-item:not(:hover) {
+            filter: blur(6px) brightness(0.5);
+            transform: scale(0.95);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.4) translateY(-10px);
+            z-index: 100;
+            box-shadow: 0 15px 40px rgba(181, 90, 97, 0.25);
+        }
+        .polaroid-caption {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #333;
+            margin-top: 15px;
+            font-style: italic;
+        }
+        .polaroid-caption a {
+            color: #111;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .polaroid-caption a:hover {
+            color: #666;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar scrolled">
+        <div class="logo">
+            <a href="index.html" style="display:flex; align-items:center; gap:10px;">
+                <img src="assets/logoNobackground.png" alt="Alexandra Cossins Logo">
+                <span>Alexandra Cossins</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#portfolio" class="nav-link">Volver</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery-header reveal-up active">
+            <h1 class="title-serif">Comuniones</h1>
+            <p>Recuerdos preciosos de una etapa única.</p>
+        </section>
+
+        <section class="gallery-grid">
+            <div class="gallery-item reveal-up active" style="--delay: 0.0s;">
+                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80" alt="Niños jugando">
+                <div class="polaroid-caption"><a href="#">Martina - 9 años</a></div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.1s;">
+                <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&h=800&q=80" alt="Niño vertical">
+                <div class="polaroid-caption">Traje marinero</div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1471286174890-9c11241e9e03?auto=format&fit=crop&w=800&q=80" alt="Niños campo">
+                <div class="polaroid-caption">Sesión en el campo</div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.3s;">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&h=800&q=80" alt="Niña retrato">
+                <div class="polaroid-caption"><a href="#">Retrato exterior</a></div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.4s;">
+                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=800&q=80" alt="Niña feliz">
+                <div class="polaroid-caption">Espontaneidad</div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.5s;">
+                <img src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?auto=format&fit=crop&w=600&h=900&q=80" alt="Retrato niño">
+                <div class="polaroid-caption">Miradas</div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.6s;">
+                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&h=600&q=80" alt="Familia">
+                <div class="polaroid-caption"><a href="#">Con la familia</a></div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.7s;">
+                <img src="https://images.unsplash.com/photo-1506869640319-a1b63fb79146?auto=format&fit=crop&w=600&h=800&q=80" alt="Niño bosque">
+                <div class="polaroid-caption">Aventura</div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.8s;">
+                <img src="https://images.unsplash.com/photo-1503455637927-730bce768f1e?auto=format&fit=crop&w=800&q=80" alt="Niña corriendo">
+                <div class="polaroid-caption">Diversión</div>
+            </div>
+            <div class="gallery-item reveal-up active" style="--delay: 0.9s;">
+                <img src="https://images.unsplash.com/photo-1542037104843-398b1a37c4ee?auto=format&fit=crop&w=600&h=800&q=80" alt="Niño elegante">
+                <div class="polaroid-caption"><a href="#">Hugo - 10 años</a></div>
+            </div>
+        </section>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>
