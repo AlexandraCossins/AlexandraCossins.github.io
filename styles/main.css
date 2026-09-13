@@ -480,10 +480,12 @@ footer p {
         grid-template-columns: 1fr;
     }
     .about-image-wrapper {
-        order: 2;
+        margin: 0 auto 2rem auto;
+        max-width: 90%; /* Dejar espacio para el marco rojo */
+        display: flex;
+        justify-content: center;
     }
     .about-text {
-        order: 1;
         text-align: center;
     }
     .about-text .signature {
@@ -499,8 +501,16 @@ footer p {
         justify-content: center;
         gap: 1rem;
     }
+    .carousel-track {
+        flex-direction: column;
+        align-items: center;
+        overflow-x: visible;
+        gap: 3rem;
+    }
     .category-card {
-        flex: 0 0 75vw;
+        flex: auto;
+        width: 100%;
+        max-width: 90vw;
     }
     .card-img-wrapper {
         height: 50vh;
@@ -520,7 +530,7 @@ footer p {
         font-size: 0.75rem;
     }
     .category-card {
-        flex: 0 0 75vw;
+        max-width: 95vw;
     }
     .card-img-wrapper {
         height: 45vh;
@@ -532,8 +542,12 @@ footer p {
         font-size: 2rem;
     }
     .social-links {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .social-link {
+        font-size: 3rem;
     }
 }
 
