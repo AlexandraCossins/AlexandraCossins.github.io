@@ -500,7 +500,7 @@ footer p {
         gap: 1rem;
     }
     .category-card {
-        flex: 0 0 85vw;
+        flex: 0 0 75vw;
     }
     .card-img-wrapper {
         height: 50vh;
@@ -520,7 +520,7 @@ footer p {
         font-size: 0.75rem;
     }
     .category-card {
-        flex: 0 0 90vw;
+        flex: 0 0 75vw;
     }
     .card-img-wrapper {
         height: 45vh;
