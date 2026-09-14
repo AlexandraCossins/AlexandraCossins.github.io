@@ -26,6 +26,9 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
+    background-color: var(--bg-color);
 }
 
 body {
@@ -34,6 +37,7 @@ body {
     font-family: var(--font-sans);
     line-height: 1.6;
     overflow-x: hidden;
+    max-width: 100%;
 }
 
 /* Loader */
@@ -89,7 +93,10 @@ a {
 /* Navbar */
 .navbar {
     position: fixed;
-    top: 0; width: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
     padding: var(--spacing-md) 5%;
     display: flex;
     justify-content: space-between;
@@ -190,7 +197,7 @@ nav ul {
     background-size: cover;
     background-position: center;
     opacity: 0.4;
-    z-index: -1;
+    z-index: 0;
     transform: scale(1.1);
     animation: zoomOut 20s infinite alternate linear;
 }
@@ -199,8 +206,9 @@ nav ul {
     100% { transform: scale(1.2); }
 }
 .hero-content {
+    position: relative;
     max-width: 800px;
-    z-index: 1;
+    z-index: 2;
 }
 .hero-content p {
     font-size: 1.2rem;
@@ -336,6 +344,7 @@ nav ul {
 .about-section {
     padding: var(--spacing-xl) 5%;
     background-color: var(--surface-color);
+    overflow: hidden;
 }
 .about-container {
     display: grid;
@@ -388,6 +397,7 @@ footer {
     padding: var(--spacing-xl) 5%;
     text-align: center;
     background-color: var(--bg-color);
+    overflow: hidden;
 }
 footer h2 {
     margin-bottom: 1rem;
@@ -514,6 +524,13 @@ footer p {
     }
     .card-img-wrapper {
         height: 50vh;
+    }
+    /* Switch horizontal scroll-reveals to vertical on mobile to prevent overflow-x bleed */
+    .reveal-left, .reveal-right {
+        transform: translateY(30px);
+    }
+    .reveal-left.active, .reveal-right.active {
+        transform: translateY(0);
     }
 }
 
