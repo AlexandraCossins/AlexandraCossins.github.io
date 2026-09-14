@@ -635,3 +635,208 @@ footer p {
     font-style: italic;
     text-align: center;
 }
+
+/* Portfolio Desk Experience */
+.portfolio-header {
+    padding: calc(var(--spacing-xl) + 40px) 5% var(--spacing-md);
+    text-align: center;
+    background-color: var(--bg-color);
+}
+.portfolio-header h1 {
+    margin-bottom: 0.5rem;
+}
+.portfolio-header p {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.portfolio-desk-section {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../assets/portfolio-desk-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 4rem 5%;
+    overflow: hidden;
+    box-shadow: inset 0 10px 25px rgba(0,0,0,0.06), inset 0 -10px 25px rgba(0,0,0,0.06);
+}
+
+.portfolio-desk-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, rgba(249, 245, 240, 0.12) 0%, rgba(30, 20, 15, 0.22) 100%);
+    pointer-events: none;
+}
+
+.polaroids-table-container {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5rem;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.desk-polaroid {
+    background-color: #ffffff;
+    padding: 18px 18px 24px 18px;
+    width: 300px;
+    border-radius: 2px;
+    box-shadow: 0 12px 32px rgba(45, 25, 20, 0.28), 0 3px 8px rgba(0,0,0,0.1);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Washi tape effect on top of polaroids */
+.desk-polaroid::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    width: 70px;
+    height: 24px;
+    background: rgba(230, 220, 205, 0.7);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transform: rotate(-2deg);
+    border-left: 2px dashed rgba(180, 160, 140, 0.3);
+    border-right: 2px dashed rgba(180, 160, 140, 0.3);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.polaroid-tilt-1 {
+    transform: rotate(-3.5deg);
+}
+.polaroid-tilt-1::before {
+    transform: rotate(-4deg);
+}
+
+.polaroid-tilt-2 {
+    transform: rotate(1.8deg) translateY(-10px);
+}
+.polaroid-tilt-2::before {
+    transform: rotate(3deg);
+}
+
+.polaroid-tilt-3 {
+    transform: rotate(4deg);
+}
+.polaroid-tilt-3::before {
+    transform: rotate(-1deg);
+}
+
+.desk-polaroid:hover {
+    transform: rotate(0deg) translateY(-18px) scale(1.04);
+    box-shadow: 0 28px 60px rgba(40, 15, 10, 0.4), 0 6px 16px rgba(0,0,0,0.15);
+    z-index: 20;
+}
+
+.desk-polaroid-img-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: #eee;
+    margin-bottom: 16px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.08);
+}
+
+.desk-polaroid-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+}
+
+.desk-polaroid:hover .desk-polaroid-img-wrapper img {
+    transform: scale(1.07);
+}
+
+.desk-polaroid-caption {
+    width: 100%;
+    text-align: center;
+}
+
+.desk-polaroid-caption h2 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: #2b2b2b;
+    margin-bottom: 4px;
+    font-weight: 400;
+}
+
+.desk-polaroid-caption p {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.desk-polaroid-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.desk-polaroid:hover .desk-polaroid-btn {
+    opacity: 1;
+    color: var(--accent-color);
+    transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+    .polaroids-table-container {
+        gap: 2.5rem;
+    }
+    .desk-polaroid {
+        width: 270px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-header {
+        padding-top: calc(var(--spacing-xl) + 20px);
+    }
+    .portfolio-desk-section {
+        min-height: auto;
+        padding: 3.5rem 5%;
+        background-position: top right;
+    }
+    .polaroids-table-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.8rem;
+    }
+    .desk-polaroid {
+        width: 100%;
+        max-width: 310px;
+    }
+    .polaroid-tilt-1 { transform: rotate(-1.5deg); }
+    .polaroid-tilt-2 { transform: rotate(1.5deg); }
+    .polaroid-tilt-3 { transform: rotate(-1deg); }
+}
+
