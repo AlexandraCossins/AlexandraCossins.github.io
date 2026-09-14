@@ -655,23 +655,23 @@ footer p {
 .portfolio-desk-section {
     position: relative;
     width: 100%;
-    min-height: 80vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('../assets/portfolio-desk-bg.jpg');
+    background-image: url('../assets/portfolio-album-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 4rem 5%;
+    padding: 4.5rem 5%;
     overflow: hidden;
-    box-shadow: inset 0 10px 25px rgba(0,0,0,0.06), inset 0 -10px 25px rgba(0,0,0,0.06);
+    box-shadow: inset 0 8px 20px rgba(0,0,0,0.04), inset 0 -8px 20px rgba(0,0,0,0.04);
 }
 
 .portfolio-desk-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at center, rgba(249, 245, 240, 0.12) 0%, rgba(30, 20, 15, 0.22) 100%);
+    background: radial-gradient(circle at center, rgba(249, 245, 240, 0.05) 0%, rgba(50, 30, 20, 0.08) 100%);
     pointer-events: none;
 }
 
