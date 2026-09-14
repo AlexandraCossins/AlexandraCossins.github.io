@@ -671,7 +671,7 @@ footer p {
 .portfolio-desk-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at center, rgba(249, 245, 240, 0.12) 0%, rgba(30, 20, 15, 0.22) 100%);
+    background: rgba(255, 255, 255, 0.1);
     pointer-events: none;
 }
 
@@ -693,7 +693,8 @@ footer p {
     padding: 18px 18px 24px 18px;
     width: 300px;
     border-radius: 2px;
-    box-shadow: 0 12px 32px rgba(45, 25, 20, 0.28), 0 3px 8px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12), 0 3px 10px rgba(0, 0, 0, 0.05);
     text-decoration: none;
     display: flex;
     flex-direction: column;
@@ -703,46 +704,21 @@ footer p {
     position: relative;
 }
 
-/* Washi tape effect on top of polaroids */
-.desk-polaroid::before {
-    content: '';
-    position: absolute;
-    top: -12px;
-    width: 70px;
-    height: 24px;
-    background: rgba(230, 220, 205, 0.7);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    transform: rotate(-2deg);
-    border-left: 2px dashed rgba(180, 160, 140, 0.3);
-    border-right: 2px dashed rgba(180, 160, 140, 0.3);
-    z-index: 10;
-    pointer-events: none;
-}
-
 .polaroid-tilt-1 {
     transform: rotate(-3.5deg);
-}
-.polaroid-tilt-1::before {
-    transform: rotate(-4deg);
 }
 
 .polaroid-tilt-2 {
     transform: rotate(1.8deg) translateY(-10px);
 }
-.polaroid-tilt-2::before {
-    transform: rotate(3deg);
-}
 
 .polaroid-tilt-3 {
     transform: rotate(4deg);
 }
-.polaroid-tilt-3::before {
-    transform: rotate(-1deg);
-}
 
 .desk-polaroid:hover {
     transform: rotate(0deg) translateY(-18px) scale(1.04);
-    box-shadow: 0 28px 60px rgba(40, 15, 10, 0.4), 0 6px 16px rgba(0,0,0,0.15);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18), 0 6px 16px rgba(0, 0, 0, 0.08);
     z-index: 20;
 }
 
