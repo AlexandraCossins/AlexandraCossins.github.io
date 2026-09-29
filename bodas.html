@@ -9,91 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .gallery-header {
-            padding: calc(var(--spacing-xl) + 60px) 5% var(--spacing-lg);
-            text-align: center;
-        }
-        .gallery-grid {
-            column-count: 4;
-            column-gap: 2rem;
-            padding: 0 0 var(--spacing-xl);
-            width: 75%;
-            max-width: 1800px;
-            margin: 0 auto;
-        }
-        @media (max-width: 1024px) {
-            .gallery-grid {
-                column-count: 2;
+    <script>
+        (function() {
+            var saved = localStorage.getItem('theme');
+            if (saved) {
+                document.documentElement.setAttribute('data-theme', saved);
             }
-        }
-        @media (max-width: 768px) {
-            .gallery-grid {
-                column-count: 1;
-            }
-        }
-        
-        .gallery-item {
-            display: inline-block;
-            width: 100%;
-            margin-bottom: 2rem;
-            position: relative;
-            background-color: #fafafa;
-            padding: 15px;
-            padding-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(181, 90, 97, 0.1); /* Sombra muy suave tintada de rosa */
-            transition: transform var(--transition-slow), box-shadow var(--transition-slow), filter var(--transition-slow);
-            break-inside: avoid; /* Previene que se corte la tarjeta entre columnas */
-        }
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border: 1px solid #ddd;
-        }
-        /* Entrada en cascada independiente del hover */
-        .gallery-item.reveal-up {
-            opacity: 0;
-            translate: 0 50px;
-            animation: revealUpAnim 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: var(--delay, 0s);
-        }
-        @keyframes revealUpAnim {
-            to {
-                opacity: 1;
-                translate: 0 0;
-            }
-        }
-
-        /* Efecto de Foco y Desenfoque */
-        .gallery-grid:has(.gallery-item:hover) .gallery-item:not(:hover) {
-            filter: blur(6px) brightness(0.5);
-            transform: scale(0.95);
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.4) translateY(-10px);
-            z-index: 100;
-            box-shadow: 0 15px 40px rgba(181, 90, 97, 0.25);
-        }
-        .polaroid-caption {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            color: #333;
-            margin-top: 15px;
-            font-style: italic;
-        }
-        .polaroid-caption a {
-            color: #111;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .polaroid-caption a:hover {
-            color: #666;
-            text-decoration: underline;
-        }
-    </style>
+        })();
+    </script>
 </head>
 <body>
     <header class="navbar scrolled">
@@ -106,6 +29,12 @@
         <nav>
             <ul>
                 <li><a href="portfolio.html" class="nav-link">Volver al Portfolio</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema" title="Cambiar tema">
+                        <i class="fa-solid fa-moon theme-icon-moon"></i>
+                        <i class="fa-solid fa-sun theme-icon-sun"></i>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -113,49 +42,110 @@
     <main>
         <section class="gallery-header reveal-up active">
             <h1 class="title-serif">Bodas</h1>
-            <p>El día más especial capturado para siempre.</p>
+            <p>Historias de amor capturadas con alma, luz y verdad.</p>
         </section>
 
+        <!-- Texto Narrativo Introductorio -->
+        <div class="gallery-intro-container reveal-up active">
+            <p class="gallery-intro-text">
+                Cada boda es un universo irrepetible de emociones a flor de piel, silencios que conmueven y abrazos que detienen el tiempo. Mi mirada busca capturar la autenticidad y el pulso real de vuestra historia: desde la complicidad relajada de la <strong>preboda</strong> y la magia desbordante de <strong>El Día B</strong>, hasta la calma íntima de la <strong>postboda</strong>, transformando cada instante en recuerdos <em>eternos</em>.
+            </p>
+        </div>
+
+        <!-- Subcategorías como Polaroids -->
+        <section class="subcategories-section reveal-up active">
+            <div class="subcategories-header">
+                <h2 class="subcategories-heading">Momentos de vuestra historia</h2>
+                <p class="subcategories-subheading">Haz clic en cada polaroid para explorar sus imágenes</p>
+            </div>
+            <div class="subcategories-polaroids-container">
+                <!-- Subcat 1: Preboda -->
+                <div class="subcategory-polaroid" data-filter="preboda">
+                    <div class="subcat-polaroid-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1511200155255-b82bf5f2845c?auto=format&fit=crop&w=600&h=800&q=80" alt="Preboda">
+                    </div>
+                    <div class="subcat-polaroid-caption">
+                        <h3>Preboda</h3>
+                        <p>Paseo relajado para conectar, romper el hielo y retratar vuestra complicidad natural.</p>
+                        <span class="subcat-explore-btn">Explorar <i class="fa-solid fa-arrow-down"></i></span>
+                    </div>
+                </div>
+
+                <!-- Subcat 2: El Día B -->
+                <div class="subcategory-polaroid" data-filter="dia-b">
+                    <div class="subcat-polaroid-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="El Día B">
+                    </div>
+                    <div class="subcat-polaroid-caption">
+                        <h3>El Día B</h3>
+                        <p>Preparativos, miradas del sí quiero, abrazos sinceros y la gran fiesta.</p>
+                        <span class="subcat-explore-btn">Explorar <i class="fa-solid fa-arrow-down"></i></span>
+                    </div>
+                </div>
+
+                <!-- Subcat 3: Postboda -->
+                <div class="subcategory-polaroid" data-filter="postboda">
+                    <div class="subcat-polaroid-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&h=600&q=80" alt="Postboda">
+                    </div>
+                    <div class="subcat-polaroid-caption">
+                        <h3>Postboda</h3>
+                        <p>Vuestros trajes, un entorno mágico y todo el tiempo del mundo sin prisas.</p>
+                        <span class="subcat-explore-btn">Explorar <i class="fa-solid fa-arrow-down"></i></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filtros Rápidos -->
+        <div id="gallery-photos" class="gallery-filters reveal-up active">
+            <button class="filter-btn active" data-filter="all">Todas las fotos</button>
+            <button class="filter-btn" data-filter="preboda">Preboda</button>
+            <button class="filter-btn" data-filter="dia-b">El Día B</button>
+            <button class="filter-btn" data-filter="postboda">Postboda</button>
+        </div>
+
+        <!-- Cuadrícula de Fotos Polaroid -->
         <section class="gallery-grid">
-            <div class="gallery-item reveal-up active" style="--delay: 0.0s;">
+            <div class="gallery-item reveal-up active" data-category="dia-b" style="--delay: 0.0s;">
                 <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Boda apaisada">
                 <div class="polaroid-caption"><a href="#">El gran día</a></div>
             </div>
-            <div class="gallery-item reveal-up active" style="--delay: 0.1s;">
+            <div class="gallery-item reveal-up active" data-category="dia-b" style="--delay: 0.1s;">
                 <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&h=800&q=80" alt="Boda vertical">
                 <div class="polaroid-caption">Ceremonia civil</div>
             </div>
-            <div class="gallery-item reveal-up active" style="--delay: 0.2s;">
+            <div class="gallery-item reveal-up active" data-category="dia-b" style="--delay: 0.2s;">
                 <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=600&h=600&q=80" alt="Boda cuadrada">
-                <div class="polaroid-caption">Detalles</div>
+                <div class="polaroid-caption">Detalles florales</div>
             </div>
-            <div class="gallery-item reveal-up active" style="--delay: 0.3s;">
+            <div class="gallery-item reveal-up active" data-category="postboda" style="--delay: 0.3s;">
                 <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&h=600&q=80" alt="Boda apaisada 2">
                 <div class="polaroid-caption"><a href="#">Paseo romántico</a></div>
             </div>
-            <div class="gallery-item reveal-up active" style="--delay: 0.4s;">
-                <img src="https://images.unsplash.com/photo-1543165365-07232ed12fad?auto=format&fit=crop&w=600&h=800&q=80" alt="Boda vertical 2">
-                <div class="polaroid-caption">Preparativos</div>
+            <div class="gallery-item reveal-up active" data-category="preboda" style="--delay: 0.4s;">
+                <img src="https://images.unsplash.com/photo-1511200155255-b82bf5f2845c?auto=format&fit=crop&w=800&q=80" alt="Sesión Preboda">
+                <div class="polaroid-caption">Paseo previo</div>
             </div>
-            <div class="gallery-item reveal-up active" style="--delay: 0.5s;">
+            <div class="gallery-item reveal-up active" data-category="dia-b" style="--delay: 0.5s;">
                 <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80" alt="Boda anillos">
                 <div class="polaroid-caption">Los anillos</div>
             </div>
-            <div class="gallery-item reveal-up active" style="--delay: 0.6s;">
+            <div class="gallery-item reveal-up active" data-category="postboda" style="--delay: 0.6s;">
                 <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&h=900&q=80" alt="Boda retrato">
-                <div class="polaroid-caption"><a href="#">Retrato</a></div>
+                <div class="polaroid-caption"><a href="#">Retrato atemporal</a></div>
             </div>
-            <div class="gallery-item reveal-up active" style="--delay: 0.7s;">
+            <div class="gallery-item reveal-up active" data-category="dia-b" style="--delay: 0.7s;">
                 <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80" alt="Boda fiesta">
                 <div class="polaroid-caption">La fiesta</div>
             </div>
-            <div class="gallery-item reveal-up active" style="--delay: 0.8s;">
-                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&h=600&q=80" alt="Boda banquete">
-                <div class="polaroid-caption">Banquete</div>
+            <div class="gallery-item reveal-up active" data-category="preboda" style="--delay: 0.8s;">
+                <img src="https://images.unsplash.com/photo-1518049362265-d5b2a6467637?auto=format&fit=crop&w=600&h=800&q=80" alt="Complicidad preboda">
+                <div class="polaroid-caption"><a href="#">Miradas cómplices</a></div>
             </div>
-            <div class="gallery-item reveal-up active" style="--delay: 0.9s;">
+            <div class="gallery-item reveal-up active" data-category="postboda" style="--delay: 0.9s;">
                 <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=600&h=800&q=80" alt="Boda beso">
-                <div class="polaroid-caption"><a href="#">El beso</a></div>
+                <div class="polaroid-caption"><a href="#">El primer beso</a></div>
             </div>
         </section>
     </main>

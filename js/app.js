@@ -1,4 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Dark / Light Theme Toggle & Automatic System Preference
+    const initTheme = () => {
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+        const getEffectiveTheme = () => {
+            const currentAttr = document.documentElement.getAttribute('data-theme');
+            if (currentAttr) return currentAttr;
+            return mediaQuery.matches ? 'dark' : 'light';
+        };
+
+        const updateToggleButtonState = (theme) => {
+            if (!themeToggleBtn) return;
+            const isDark = theme === 'dark';
+            themeToggleBtn.setAttribute('aria-label', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+            themeToggleBtn.setAttribute('title', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+        };
+
+        // Initialize button accessibility attributes
+        updateToggleButtonState(getEffectiveTheme());
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = getEffectiveTheme();
+                const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', nextTheme);
+                try {
+                    localStorage.setItem('theme', nextTheme);
+                } catch (e) {
+                    console.error('No se pudo guardar la preferencia de tema', e);
+                }
+                updateToggleButtonState(nextTheme);
+            });
+        }
+
+        // React immediately if device preference changes in real time
+        mediaQuery.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                updateToggleButtonState(e.matches ? 'dark' : 'light');
+            }
+        });
+    };
+
+    initTheme();
     // Hide Loader
     const loader = document.querySelector('.loader');
     setTimeout(() => {
@@ -149,6 +193,63 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 
                 lightbox.classList.add('active');
+            });
+        });
+    }
+
+    // Gallery Subcategory Filtering Logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const subcategoryPolaroids = document.querySelectorAll('.subcategory-polaroid');
+
+    if (filterButtons.length > 0 || subcategoryPolaroids.length > 0) {
+        const filterGallery = (filterValue) => {
+            // Update filter button states
+            filterButtons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === filterValue) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Filter photo items
+            const currentItems = document.querySelectorAll('.gallery-item');
+            currentItems.forEach(item => {
+                const itemCat = item.getAttribute('data-category');
+                if (filterValue === 'all' || itemCat === filterValue) {
+                    item.style.display = 'inline-block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 20);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        };
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                filterGallery(filter);
+            });
+        });
+
+        subcategoryPolaroids.forEach(card => {
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                const filter = card.getAttribute('data-filter');
+                if (filter) {
+                    filterGallery(filter);
+                    const photosSection = document.getElementById('gallery-photos');
+                    if (photosSection) {
+                        photosSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
             });
         });
     }

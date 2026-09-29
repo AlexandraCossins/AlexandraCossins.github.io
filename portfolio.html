@@ -10,6 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        (function() {
+            var saved = localStorage.getItem('theme');
+            if (saved) {
+                document.documentElement.setAttribute('data-theme', saved);
+            }
+        })();
+    </script>
 </head>
 <body>
     <header class="navbar scrolled">
@@ -24,6 +32,12 @@
                 <li><a href="index.html#about" class="nav-link">Sobre Mí</a></li>
                 <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
                 <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema" title="Cambiar tema">
+                        <i class="fa-solid fa-moon theme-icon-moon"></i>
+                        <i class="fa-solid fa-sun theme-icon-sun"></i>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -51,20 +65,32 @@
                     </div>
                 </a>
 
-                <!-- Polaroid Comuniones -->
-                <a href="comuniones.html" class="desk-polaroid polaroid-tilt-2" aria-label="Entrar a la Galería de Comuniones">
+                <!-- Polaroid Familias -->
+                <a href="familias.html" class="desk-polaroid polaroid-tilt-2" aria-label="Entrar a la Galería de Familias">
                     <div class="desk-polaroid-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80" alt="Galería de Comuniones">
+                        <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80" alt="Galería de Familias">
                     </div>
                     <div class="desk-polaroid-caption">
-                        <h2>Comuniones</h2>
-                        <p>Recuerdos para siempre</p>
+                        <h2>Familias</h2>
+                        <p>Vínculos que trascienden</p>
+                        <span class="desk-polaroid-btn">Ver Galería <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Polaroid Maternidad & Newborn -->
+                <a href="maternidad-newborn.html" class="desk-polaroid polaroid-tilt-3" aria-label="Entrar a la Galería de Maternidad y Newborn">
+                    <div class="desk-polaroid-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80" alt="Galería de Maternidad y Newborn">
+                    </div>
+                    <div class="desk-polaroid-caption">
+                        <h2>Maternidad & Newborn</h2>
+                        <p>El inicio de la vida</p>
                         <span class="desk-polaroid-btn">Ver Galería <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </a>
 
                 <!-- Polaroid Parejas -->
-                <a href="parejas.html" class="desk-polaroid polaroid-tilt-3" aria-label="Entrar a la Galería de Parejas">
+                <a href="parejas.html" class="desk-polaroid polaroid-tilt-1" aria-label="Entrar a la Galería de Parejas">
                     <div class="desk-polaroid-img-wrapper">
                         <img src="https://images.unsplash.com/photo-1511200155255-b82bf5f2845c?auto=format&fit=crop&w=800&q=80" alt="Galería de Parejas">
                     </div>

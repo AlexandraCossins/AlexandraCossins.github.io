@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maternidad & Newborn | Alexandra Cossins</title>
+    <link rel="icon" type="image/png" href="assets/logoNobackground.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        (function() {
+            var saved = localStorage.getItem('theme');
+            if (saved) {
+                document.documentElement.setAttribute('data-theme', saved);
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header class="navbar scrolled">
+        <div class="logo">
+            <a href="index.html" style="display:flex; align-items:center; gap:10px;">
+                <img src="assets/logoNobackground.png" alt="Alexandra Cossins Logo">
+                <span>Alexandra Cossins</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="portfolio.html" class="nav-link">Volver al Portfolio</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema" title="Cambiar tema">
+                        <i class="fa-solid fa-moon theme-icon-moon"></i>
+                        <i class="fa-solid fa-sun theme-icon-sun"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery-header reveal-up active">
+            <h1 class="title-serif">Maternidad & Newborn</h1>
+            <p>La dulce espera y la fragilidad mágica de los primeros días.</p>
+        </section>
+
+        <!-- Texto Narrativo Introductorio -->
+        <div class="gallery-intro-container reveal-up active">
+            <p class="gallery-intro-text">
+                La espera de una nueva vida y la delicadeza de sus primeros días en el mundo son milagros fugaces. Fotografiar la <strong>maternidad</strong> es celebrar la belleza, fuerza y emoción de la dulce espera; retratar a un recién nacido en su etapa <strong>newborn</strong> es detener la fragilidad de sus primeros suspiros, su piel suave y la ternura infinita con la que nace una nueva familia. Instantes <em>eternos</em> capturados con una luz suave, orgánica y respetuosa.
+            </p>
+        </div>
+
+        <!-- Subcategorías como Polaroids -->
+        <section class="subcategories-section reveal-up active">
+            <div class="subcategories-header">
+                <h2 class="subcategories-heading">Etapas llenas de ternura</h2>
+                <p class="subcategories-subheading">Haz clic en cada polaroid para explorar sus imágenes</p>
+            </div>
+            <div class="subcategories-polaroids-container">
+                <!-- Subcat 1: Maternidad -->
+                <div class="subcategory-polaroid" data-filter="maternidad">
+                    <div class="subcat-polaroid-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=800&q=80" alt="Maternidad">
+                    </div>
+                    <div class="subcat-polaroid-caption">
+                        <h3>Maternidad</h3>
+                        <p>Retratos íntimos, luminosos y elegantes celebrando la belleza de la dulce espera.</p>
+                        <span class="subcat-explore-btn">Explorar <i class="fa-solid fa-arrow-down"></i></span>
+                    </div>
+                </div>
+
+                <!-- Subcat 2: Newborn -->
+                <div class="subcategory-polaroid" data-filter="newborn">
+                    <div class="subcat-polaroid-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80" alt="Newborn">
+                    </div>
+                    <div class="subcat-polaroid-caption">
+                        <h3>Newborn</h3>
+                        <p>La calma, los pequeños detalles y la pureza serena de sus primeros días de vida.</p>
+                        <span class="subcat-explore-btn">Explorar <i class="fa-solid fa-arrow-down"></i></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filtros Rápidos -->
+        <div id="gallery-photos" class="gallery-filters reveal-up active">
+            <button class="filter-btn active" data-filter="all">Todas las fotos</button>
+            <button class="filter-btn" data-filter="maternidad">Maternidad</button>
+            <button class="filter-btn" data-filter="newborn">Newborn</button>
+        </div>
+
+        <!-- Cuadrícula de Fotos Polaroid -->
+        <section class="gallery-grid">
+            <div class="gallery-item reveal-up active" data-category="maternidad" style="--delay: 0.0s;">
+                <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=800&q=80" alt="Maternidad en el bosque">
+                <div class="polaroid-caption"><a href="#">La luz de la espera</a></div>
+            </div>
+            <div class="gallery-item reveal-up active" data-category="newborn" style="--delay: 0.1s;">
+                <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80" alt="Recién nacido durmiendo">
+                <div class="polaroid-caption">Paz absoluta</div>
+            </div>
+            <div class="gallery-item reveal-up active" data-category="newborn" style="--delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80" alt="Madre con bebé">
+                <div class="polaroid-caption">Vínculo sagrado</div>
+            </div>
+            <div class="gallery-item reveal-up active" data-category="newborn" style="--delay: 0.3s;">
+                <img src="https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=800&q=80" alt="Instante de calma">
+                <div class="polaroid-caption"><a href="#">Calma y protección</a></div>
+            </div>
+            <div class="gallery-item reveal-up active" data-category="newborn" style="--delay: 0.4s;">
+                <img src="https://images.unsplash.com/photo-1508873696983-2df57036476b?auto=format&fit=crop&w=800&q=80" alt="Detalle piececitos de bebé">
+                <div class="polaroid-caption">Detalles diminutos</div>
+            </div>
+            <div class="gallery-item reveal-up active" data-category="newborn" style="--delay: 0.5s;">
+                <img src="https://images.unsplash.com/photo-1542037104843-398b1a37c4ee?auto=format&fit=crop&w=800&q=80" alt="Papá con bebé">
+                <div class="polaroid-caption">En brazos de papá</div>
+            </div>
+            <div class="gallery-item reveal-up active" data-category="maternidad" style="--delay: 0.6s;">
+                <img src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=800&q=80" alt="Embarazo en naturaleza">
+                <div class="polaroid-caption"><a href="#">Silueta al atardecer</a></div>
+            </div>
+            <div class="gallery-item reveal-up active" data-category="maternidad" style="--delay: 0.7s;">
+                <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80" alt="Espera maternal">
+                <div class="polaroid-caption">Esperando tu llegada</div>
+            </div>
+            <div class="gallery-item reveal-up active" data-category="newborn" style="--delay: 0.8s;">
+                <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=800&q=80" alt="Bebé envuelto en manta">
+                <div class="polaroid-caption">Fragilidad y calor</div>
+            </div>
+            <div class="gallery-item reveal-up active" data-category="maternidad" style="--delay: 0.9s;">
+                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80" alt="Pareja esperando a su bebé">
+                <div class="polaroid-caption"><a href="#">Dos esperando a tres</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content reveal-up">
+            <h2 class="title-serif">Creemos recuerdos <em>eternos</em></h2>
+            <p>¿Estás esperando a tu bebé o deseas guardar sus primeros días? Cuéntame tu fecha prevista.</p>
+            <div class="social-links">
+                <a href="https://wa.me/34689539849" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+                    <i class="fa-brands fa-square-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/alexandra.cossins/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                    <i class="fa-brands fa-square-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/@Alexandra.Cossins" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+                    <i class="fa-brands fa-square-youtube"></i>
+                </a>
+                <a href="mailto:info@alexandracossins.com" class="social-link" aria-label="Email">
+                    <i class="fa-solid fa-square-envelope"></i>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2026 Alexandra Cossins Photography. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -12,6 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        (function() {
+            var saved = localStorage.getItem('theme');
+            if (saved) {
+                document.documentElement.setAttribute('data-theme', saved);
+            }
+        })();
+    </script>
 </head>
 <body>
     <div class="loader">
@@ -28,6 +36,12 @@
                 <li><a href="#about" class="nav-link">Sobre Mí</a></li>
                 <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                 <li><a href="#contact" class="nav-link">Contacto</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema" title="Cambiar tema">
+                        <i class="fa-solid fa-moon theme-icon-moon"></i>
+                        <i class="fa-solid fa-sun theme-icon-sun"></i>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -50,14 +64,14 @@
             
             <div class="carousel-container">
                 <div class="carousel-track">
-                    <!-- Categoría Bodas -->
+                    <!-- Categoría 1: Bodas -->
                     <div class="category-card" onclick="window.location.href='bodas.html'">
                         <div class="card-img-wrapper">
                             <div class="swiper cube-swiper">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/IMG_54391.png');"></div></div>
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80');"></div></div>
                                     <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/LOGO.jpg');"></div></div>
-                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/IMG_54391.png');"></div></div>
                                 </div>
                             </div>
                             <div class="card-overlay"></div>
@@ -69,32 +83,51 @@
                         </div>
                     </div>
                     
-                    <!-- Categoría Comuniones -->
-                    <div class="category-card" onclick="window.location.href='comuniones.html'">
+                    <!-- Categoría 2: Familias -->
+                    <div class="category-card" onclick="window.location.href='familias.html'">
                         <div class="card-img-wrapper">
                             <div class="swiper cube-swiper">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/ac\ poppy\ limpio\ \[Recuperado\]-07.png');"></div></div>
-                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/LOGO.jpg');"></div></div>
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80');"></div></div>
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80');"></div></div>
                                     <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/ac\ poppy\ limpio\ \[Recuperado\]-07.png');"></div></div>
                                 </div>
                             </div>
                             <div class="card-overlay"></div>
                         </div>
                         <div class="card-content">
-                            <h3>Comuniones</h3>
-                            <p>Recuerdos para siempre</p>
+                            <h3>Familias</h3>
+                            <p>Vínculos que trascienden</p>
                             <span class="view-btn">Ver Galería <span class="arrow">→</span></span>
                         </div>
                     </div>
 
-                    <!-- Categoría Parejas -->
+                    <!-- Categoría 3: Maternidad & Newborn -->
+                    <div class="category-card" onclick="window.location.href='maternidad-newborn.html'">
+                        <div class="card-img-wrapper">
+                            <div class="swiper cube-swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80');"></div></div>
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80');"></div></div>
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=800&q=80');"></div></div>
+                                </div>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Maternidad & Newborn</h3>
+                            <p>El milagro de una nueva vida</p>
+                            <span class="view-btn">Ver Galería <span class="arrow">→</span></span>
+                        </div>
+                    </div>
+
+                    <!-- Categoría 4: Parejas -->
                     <div class="category-card" onclick="window.location.href='parejas.html'">
                         <div class="card-img-wrapper">
                             <div class="swiper cube-swiper">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/LOGO.jpg');"></div></div>
-                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/IMG_54391.png');"></div></div>
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1511200155255-b82bf5f2845c?auto=format&fit=crop&w=800&q=80');"></div></div>
+                                    <div class="swiper-slide"><div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80');"></div></div>
                                     <div class="swiper-slide"><div class="card-bg" style="background-image: url('assets/LOGO.jpg');"></div></div>
                                 </div>
                             </div>
